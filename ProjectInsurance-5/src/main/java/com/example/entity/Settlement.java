@@ -15,7 +15,8 @@ public class Settlement {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer settlementId; // This is primary key of the settlement table
-	
+	 private String claimNumber;  // Reference number  add by siddhi
+	 private double amount; // add by siddhi
 	private double settledAmount;
 	private String status;
 	private String sttlementDate;
@@ -31,6 +32,21 @@ public class Settlement {
 		return settlementId;
 	}
 
+	 public String getClaimNumber() {      // add by siddhi
+	        return claimNumber;
+	    }
+
+	    public void setClaimNumber(String claimNumber) {  // add by siddhi
+	        this.claimNumber = claimNumber; 
+	    }
+
+	    public double getAmount() {
+	        return amount;
+	    }
+
+	    public void setAmount(double amount) {  // add by siddhi
+	        this.amount = amount;
+	    }
 
 
 
