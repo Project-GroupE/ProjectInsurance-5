@@ -15,11 +15,17 @@ import com.policy.entity.Policy;*/
 
 @Service
 public class PolicyServiceImpl implements PolicyService{
-	 @Autowired
-	    private PolicyRepository policyRepository;
-	 	
-	 @Override
-	    public Optional<Policy> getPolicyByDriverName(String driverName) {
-	        return policyRepository.findByDriverName(driverName);
-	    }
+	@Autowired
+	private PolicyRepository policyRepository;
+
+	@Override
+	public Optional<Policy> getPolicyByDriverName(String driverName) {
+		return policyRepository.findByDriverName(driverName);
+	}
+
+	@Override
+	public Policy savePolicy(Policy policy) {
+		Policy p1=policyRepository.save(policy);
+		return p1;
+	}
 }
