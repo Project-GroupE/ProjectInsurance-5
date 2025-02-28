@@ -9,62 +9,71 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="policies")
 public class Policy {
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-private Integer policyId;
-private String policyName;
-private String policyNumber;
-private String policyStatus;
-private String plHolderName;
-private double policyAmt;
-private String driverName;
-public String getDriverName() {
-	return driverName;
-}
-public void setDriverName(String driverName) {
-	this.driverName = driverName;
-}
-public Integer getPolicyId() {
-	return policyId;
-}
-public void setPolicyId(Integer policyId) {
-	this.policyId = policyId;
-}
-public String getPolicyName() {
-	return policyName;
-}
-public void setPolicyName(String policyName) {
-	this.policyName = policyName;
-}
-public String getPolicyNumber() {
-	return policyNumber;
-}
-public void setPolicyNumber(String policyNumber) {
-	this.policyNumber = policyNumber;
-}
-public String getPolicyStatus() {
-	return policyStatus;
-}
-public void setPolicyStatus(String policyStatus) {
-	this.policyStatus = policyStatus;
-}
-public String getPlHolderName() {
-	return plHolderName;
-}
-public void setPlHolderName(String plHolderName) {
-	this.plHolderName = plHolderName;
-}
-public double getPolicyAmt() {
-	return policyAmt;
-}
-public void setPolicyAmt(double policyAmt) {
-	this.policyAmt = policyAmt;
-}
-@Override
-public String toString() {
-	return "Policy [policyId=" + policyId + ", policyName=" + policyName + ", policyNumber=" + policyNumber
-			+ ", policyStatus=" + policyStatus + ", plHolderName=" + plHolderName + ", policyAmt=" + policyAmt
-			+ ", driverName=" + driverName + "]";
-}
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer policyId;
+	private String policyName;
+	private String policyNumber;
+	private String policyStatus;
+	private String plHolderName;
+	private double policyAmt;
+	private String driverName;
+	
+	// 'id' is the primary key from user table 
+	private Integer id;
+	
+	public String getDriverName() {
+		return driverName;
+	}
+	public void setDriverName(String driverName) {
+		this.driverName = driverName;
+	}
+	public Integer getPolicyId() {
+		return policyId;
+	}
+	public void setPolicyId(Integer policyId) {
+		this.policyId = policyId;
+	}
+	public String getPolicyName() {
+		return policyName;
+	}
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+	}
+	public String getPolicyNumber() {
+		return policyNumber;
+	}
+	public void setPolicyNumber(String policyNumber) {
+		this.policyNumber = policyNumber;
+	}
+	public String getPolicyStatus() {
+		return policyStatus;
+	}
+	public void setPolicyStatus(String policyStatus) {
+		this.policyStatus = policyStatus;
+	}
+	public String getPlHolderName() {
+		return plHolderName;
+	}
+	public void setPlHolderName(String plHolderName) {
+		this.plHolderName = plHolderName;
+	}
+	public double getPolicyAmt() {
+		return policyAmt;
+	}
+	public void setPolicyAmt(double policyAmt) {
+		this.policyAmt = policyAmt;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return "Policy [policyId=" + policyId + ", policyName=" + policyName + ", policyNumber=" + policyNumber
+				+ ", policyStatus=" + policyStatus + ", plHolderName=" + plHolderName + ", policyAmt=" + policyAmt
+				+ ", driverName=" + driverName + ", id=" + id + "]";
+	}
 }
